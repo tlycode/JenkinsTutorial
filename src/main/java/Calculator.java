@@ -40,7 +40,10 @@ class Calculator {
      */
     int fibonacciNumberFinder(int n){
 
-        if (n < 2) {
+        n -= 1;
+        if (n < 0)
+            return 0;
+        else if (n < 2) {
             return 1;
         }
         return fibonacciNumberFinder(n) + fibonacciNumberFinder(n - 1);
@@ -55,7 +58,27 @@ class Calculator {
     if int a = 16 then this method returns: 10000
      */
     String intToBinaryNumber(int n){
-        return null;
+        if ( n == 0) {
+            return "0";
+        }
+        int pow = 0;
+        while (n > Math.pow(2, pow)) {
+            pow++;
+        }
+
+        String binaryRepresentation = "";
+
+        for (int i = pow; i >= 0; i--) {
+            if (n - Math.pow(2, i) >= 0) {
+                binaryRepresentation += "1";
+                n = n - (int)Math.pow(2,i);
+            }
+            else if (i != pow){
+                binaryRepresentation += "0";
+            }
+        }
+
+        return binaryRepresentation;
     }
 
     /*
