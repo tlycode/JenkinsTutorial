@@ -79,7 +79,7 @@ class Calculator {
                 binaryRepresentation += "0";
             }
         }
-whats
+
         return binaryRepresentation;
     }
 
