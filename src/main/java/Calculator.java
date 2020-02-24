@@ -7,7 +7,8 @@ class Calculator {
     }
 
     int add(int a , int b){
-        return a + b;
+        int result = a + b;
+	return result;
     }
 
     int subtract(int a , int b){
