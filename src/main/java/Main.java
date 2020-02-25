@@ -3,31 +3,31 @@ import org.w3c.dom.ls.LSInput;
 import java.util.Scanner;
 
 public class Main {
-    Calculator calculator = new Calculator();
 
-    public void main(String args[]) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String args[]) {
+        Calculator calculator = new Calculator();
 
         System.out.println("Welcome to the calculator");
-        System.out.println("Enter a command:");
 
         while (true) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter a command:");
             String function = scanner.nextLine();
             int a = scanner.nextInt();
             int b = scanner.nextInt();
 
-            if (function == "add") {
-                calculator.add(a, b);
-            } else if (function == "subtract") {
-                calculator.subtract(a, b);
-            } else if (function == "multiply") {
-                calculator.multiply(a, b);
-            } else if (function == "divide") {
-                calculator.divide(a, b);
-            } else if (function == "fibonacci") {
-                calculator.fibonacciNumberFinder(a);
-            } else if (function == "binary") {
-                calculator.intToBinaryNumber(a);
+            if (function.contains("add")) {
+                System.out.println(calculator.add(a, b));
+            } else if (function.contains("subtract")) {
+                System.out.println(calculator.subtract(a, b));
+            } else if (function.contains("multiply")) {
+                System.out.println(calculator.multiply(a, b));
+            } else if (function.contains("divide")) {
+                System.out.println(calculator.divide(a, b));
+            } else if (function.contains("fibonacci")) {
+                System.out.println(calculator.fibonacciNumberFinder(a));
+            } else if (function.contains("binary")) {
+                System.out.println(calculator.intToBinaryNumber(a));
             }
             else break;
         }
